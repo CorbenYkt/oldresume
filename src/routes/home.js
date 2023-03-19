@@ -21,7 +21,7 @@ export default function About() {
 
             </Box>
             <div>
-                <p>Hey, it's me, my wife Tanya and our son Gosha. I am from the city of Yakutsk, I am {(new Date().getFullYear() - 1985)} years old and I love nature and my family. We also have a West Highland White Terrier. Here is his <a href="https://corbenykt.github.io/fozzy/">page</a>. I also love programming, before that I worked in the field of building and construction design for a long time. Currently, I entered St. Petersburg Polytechnic University for a joint postgraduate program "Intelligent Systems" with the University of Wellington.</p>
+                <p>Hey, it's me, my wife Tanya and our son Gosha. I am from the city of Yakutsk, in my {(new Date().getFullYear() - 1985)} years old and I love nature and my family. We also have a West Highland White Terrier. Here is his <a href="https://corbenykt.github.io/fozzy/">page</a>. I also love programming, before that I worked in the field of building and construction design for a long time. Currently, I entered St. Petersburg Polytechnic University for a joint postgraduate program "Intelligent Systems" with the University of Wellington.</p>
             </div>
         </div>
     )
