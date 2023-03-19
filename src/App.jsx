@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import { Routes, Route } from "react-router-dom";
-import About from "./routes/about";
+import Coins from "./routes/coins";
 import Meteo from "./routes/meteo";
 import Home from "./routes/home";
 import Navbar from './navbar';
@@ -75,9 +75,9 @@ function App() {
             <Navbar></Navbar>
             <Container>
               <Routes>
-                <Route index path="/" element={<Home coins={coins} currencies={currencies} />} />
+                <Route index path="/" element={<Home />} />
                 <Route exact path="/meteo" element={<Meteo />} />
-                <Route exact path="/about" element={<About />} />
+                <Route exact path="/coins" element={<Coins coins={coins} currencies={currencies} />} />
               </Routes>
             </Container>
           </Grid>

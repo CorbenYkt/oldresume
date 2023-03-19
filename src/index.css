@@ -8,18 +8,25 @@ body,
 
 a:link {
   text-decoration: none;
+  color: #54627B;
+  font-weight: bold;
 }
 
 a:visited {
   text-decoration: none;
+  color: #54627B;
+  font-weight: bold;
 }
 
 a:hover {
   text-decoration: none;
+  color: #54627B;
+  font-weight: bold;
 }
 
 a:active {
   text-decoration: none;
+  color: #ECD5BB;
 }
 
 body {
@@ -33,4 +40,10 @@ body {
   height: 100%;
   box-sizing: border-box;
   color: black;
+}
+
+h3
+{
+  color:#54627B;
+  
 }

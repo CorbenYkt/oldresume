@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 const navbar = () => {
     return (
         <Box display={'flex'} justifyContent={'center'} columnGap={'1em'} fontSize={'1rem'} paddingTop={2} paddingBottom={2} >
-            <Link to="/">Coins|Currency</Link>
+            <Link to="/">Me</Link>
             <Link to="/meteo">Meteo</Link>
-            <Link to="/about">Me</Link>
+            <Link to="/coins">Coins|Currency</Link>
             <Link to="/about">Homeworks</Link>
         </Box >
     )
