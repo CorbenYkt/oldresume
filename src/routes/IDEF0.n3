@@ -7,9 +7,9 @@
 
 
 ind:process0 a classes:process;
-		rdfs:label "Image Recognition";
-		rdf:isDefinedBy	"Me";
-		prop:hasKPI ind:rulesofrecognition;
+        rdfs:label "Image Recognition";
+        rdf:isDefinedBy	"Me";
+        prop:hasKPI ind:rulesofrecognition;
         prop:hasKPI	ind:mlalgorith;
         prop:hasInput ind:imagedatasets;
         prop:hasInput ind:Image;
@@ -27,7 +27,6 @@ ind:process01 prop:SubProcess ind:process0;
 
 ind:process02 prop:SubProcess ind:process0;
 		rdfs:label "Acquire model";
-        prop:hasInput ind:process01;
         prop:hasResource ind:teammates;
         prop:hasResource ind:googlecloud;
 		prop:hasKPI	ind:rulesofrecognition;
@@ -35,9 +34,7 @@ ind:process02 prop:SubProcess ind:process0;
         prop:hasOutput ind:Recognition.
 
 ind:process03 prop:SubProcess ind:process0;
-		rdfs:label "Recognition";
-        prop:hasInput ind:process01;
-   		prop:hasKPI	ind:process02;
+        rdfs:label "Recognition";
         prop:hasResource ind:teammates;
         prop:hasResource ind:googlecloud;
         prop:hasOutput ind:Text.
