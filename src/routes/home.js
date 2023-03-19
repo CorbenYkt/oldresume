@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 export default function About() {
     return (
-        <div>
+        <div style={{ textAlign: 'justify' }}>
             <Box
                 sx={{
                     display: 'flex',

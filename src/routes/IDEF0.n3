@@ -1,0 +1,46 @@
+@prefix ind:<URN:inds:>.
+@prefix prop:<URN:prop:>.
+@prefix classes:<URN:class>.
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+ind:process0 rdf:type classes:Process;
+		rdfs:label "Image Recognition";
+		rdf:isDefinedBy	"Me";
+		prop:hasKPI	ind:rulesofrecognition;
+        prop:hasKPI	ind:mlalgorith;
+        prop:hasInput ind:imagedatasets;
+        prop:hasInput ind:Image;
+        prop:hasResource ind:teammates;
+        prop:hasResource ind:googlecloud;
+        prop:hasOutput ind:Text;
+
+ind:process01 prop:SubProcess ind:process0;
+		rdfs:label "C1 and Image preparing";
+        prop:hasInput ind:imagedatasets;
+        prop:hasInput ind:Image;
+        prop:hasResource ind:teammates;
+        prop:hasOutput ind:Recognition;
+        prop:hasOutput ind:Acquiremodel;
+
+ind:process02 prop:SubProcess ind:process0;
+		rdfs:label "Acquire model";
+        prop:hasInput ind:process01;
+        prop:hasResource ind:teammates;
+        prop:hasResource ind:googlecloud;
+		prop:hasKPI	ind:rulesofrecognition;
+        prop:hasKPI	ind:mlalgorith;
+        prop:hasOutput ind:Recognition;
+
+ind:process03 prop:SubProcess ind:process0;
+		rdfs:label "Recognition";
+        prop:hasInput ind:process01;
+   		prop:hasKPI	ind:process02;
+        prop:hasResource ind:teammates;
+        prop:hasResource ind:googlecloud;
+        prop:hasOutput ind:Text;
+
+
+
