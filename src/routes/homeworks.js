@@ -36,7 +36,7 @@ export default function Homeworks() {
     const [code, setCode] = React.useState(
         ``
     );
-    fetch("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/routes/IDEF0.n3")
+    fetch("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/IDEF0.n3")
         .then((response) => response.text())
         .then((html) => { setCode(html); })
         .catch((error) => { console.warn(error); });
@@ -81,8 +81,8 @@ export default function Homeworks() {
                             Having been designed to query a great variety of data, it can efficiently extract information hidden in
                             non-uniform data and stored in various formats and sources.
                             Our homework was to write Knowledgebase (KB) of previous IDEF0 scheme, and to do some query on it using SPARQL.</p>
-                        <span>My KB file is located <a href='https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/routes/IDEF0.n3'>here</a> and it totally describes my IDEF0 scheme</span>
-                        <p></p>
+                        <p>My KB file is located <a href='https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/routes/IDEF0.n3'>here</a> and it totally describes my IDEF0 scheme</p>
+
                         <Editor
                             value={code}
                             onValueChange={code => setCode(code)}
@@ -93,7 +93,27 @@ export default function Homeworks() {
                                 fontSize: 12,
                             }}
                         />
-
+                        <p>Now let's make some Python code:</p>
+                        <Editor
+                            value={`
+import rdflib
+from rdflib import *
+g = rdflib.Graph()
+result = g.parse("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/IDEF0.n3", format="text/n3")
+                            
+qres = g.query("""SELECT ?label WHERE {?class rdfs:label ?label.}""")
+for row in qres:
+    print(row)
+`}
+                            highlight={code => highlight(code, languages.js)}
+                            padding={4}
+                            style={{
+                                fontFamily: '"Fira code", "Fira Mono", monospace',
+                                fontSize: 12,
+                            }}
+                        />
+                        <img src={process.env.PUBLIC_URL + '/img/rdflibresults.png'} /><hr></hr>
+                        <p>As we can see code read's RDF scheme properly and outputs process labels</p>
                     </TabPanel>
                 </Box>
             </Box>

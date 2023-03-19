@@ -29,20 +29,20 @@ ind:process02 prop:SubProcess ind:process0;
     prop:hasInput ind:process01;
     prop:hasResource ind:teammates;
     prop:hasResource ind:googlecloud;
-	prop:hasKPI ind:rulesofrecognition;
+    prop:hasKPI ind:rulesofrecognition;
     prop:hasKPI ind:mlalgorith;
     prop:hasOutput ind:process03.
 
 ind:process03 prop:SubProcess ind:process0;
-	rdfs:label "Recognition";
+    rdfs:label "Recognition";
     prop:hasInput ind:process01;
-   	prop:hasKPI	ind:process02;
+    prop:hasKPI	ind:process02;
     prop:hasResource ind:teammates;
     prop:hasResource ind:googlecloud;
     prop:hasOutput ind:Text.
 
 ind:process04 prop:SubProcess ind:process02;
-	rdfs:label "Developing a model";
+    rdfs:label "Developing a model";
     prop:hasInput ind:process01;
     prop:hasKPI ind:rulesofrecognition;
     prop:hasKPI ind:mlalgorith;
@@ -51,7 +51,7 @@ ind:process04 prop:SubProcess ind:process02;
     prop:hasOutput ind:process05.
 
 ind:process05 prop:SubProcess ind:process04;
-	rdfs:label "Tuned model";
+    rdfs:label "Tuned model";
     prop:hasInput ind:process01;
     prop:hasResource ind:teammates;
     prop:hasResource ind:googlecloud;
