@@ -3,11 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import Coins from "./routes/coins";
 import Meteo from "./routes/meteo";
 import Home from "./routes/home";
+import Homeworks from "./routes/homeworks";
 import Navbar from './navbar';
 import { Link } from "react-router-dom"
 import { Container, Grid } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect } from 'react';
+import Box from '@mui/material/Box';
 
 function App() {
   const [currencies, setСurrencies] = React.useState();
@@ -78,7 +80,16 @@ function App() {
                 <Route index path="/" element={<Home />} />
                 <Route exact path="/meteo" element={<Meteo />} />
                 <Route exact path="/coins" element={<Coins coins={coins} currencies={currencies} />} />
+                <Route exact path="/homeworks" element={<Homeworks />} />
+
               </Routes>
+              <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
+                py={'0rem'}><br></br>
+                <a href={'https://github.com/corbenykt'} style={{ fontWeight: 'normal', textDecorationLine: '' }} >
+                  By Dmitrii Artemev
+                </a>
+                <p style={{ fontSize: '0.75rem' }}>&copy; {(new Date().getFullYear())}</p>
+              </Box>
             </Container>
           </Grid>
           <Grid item xs={1}>
