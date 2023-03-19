@@ -9,7 +9,7 @@
 ind:process0 rdf:type classes:Process;
 		rdfs:label "Image Recognition";
 		rdf:isDefinedBy	"Me";
-		prop:hasKPI	ind:rulesofrecognition;
+		prop:hasKPI ind:rulesofrecognition;
         prop:hasKPI	ind:mlalgorith;
         prop:hasInput ind:imagedatasets;
         prop:hasInput ind:Image;
@@ -17,6 +17,13 @@ ind:process0 rdf:type classes:Process;
         prop:hasResource ind:googlecloud;
         prop:hasOutput ind:Text.
 
+ind:process01 prop:SubProcess ind:process0;
+		rdfs:label "C1 and Image preparing";
+        prop:hasInput ind:imagedatasets;
+        prop:hasInput ind:Image;
+        prop:hasResource ind:teammates;
+        prop:hasOutput ind:Recognition;
+        prop:hasOutput ind:Acquiremodel.
 
 
 
