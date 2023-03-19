@@ -6,7 +6,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 
-ind:process0 rdf:type classes:Process;
+ind:process0 rdf:type classes:process;
 		rdfs:label "Image Recognition";
 		rdf:isDefinedBy	"Me";
 		prop:hasKPI ind:rulesofrecognition;
