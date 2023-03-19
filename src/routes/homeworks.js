@@ -3,7 +3,11 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
-import SparQLClass from "../sparqlclass";
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/themes/prism.css';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -26,7 +30,16 @@ function TabPanel(props) {
 }
 
 export default function Homeworks() {
+
+
     const [value, setValue] = React.useState(0);
+    const [code, setCode] = React.useState(
+        ``
+    );
+    fetch("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/routes/IDEF0.n3")
+        .then((response) => response.text())
+        .then((html) => { setCode(html); })
+        .catch((error) => { console.warn(error); });
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -64,8 +77,23 @@ export default function Homeworks() {
                     </TabPanel>
                     <TabPanel value={value} index={1} >
                         <h3>SPARQL?</h3>
-                        <p>SPARQL is the standard query language and protocol for Linked Open Data and RDF databases. Having been designed to query a great variety of data, it can efficiently extract information hidden in non-uniform data and stored in various formats and sources.</p>
-                        <SparQLClass></SparQLClass>
+                        <p>SPARQL is the standard query language and protocol for Linked Open Data and RDF databases.
+                            Having been designed to query a great variety of data, it can efficiently extract information hidden in
+                            non-uniform data and stored in various formats and sources.
+                            Our homework was to write Knowledgebase (KB) of previous IDEF0 scheme, and to do some query on it using SPARQL.</p>
+                        <span>My KB file is located <a href='https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/routes/IDEF0.n3'>here</a> and it totally describes my IDEF0 scheme</span>
+                        <p></p>
+                        <Editor
+                            value={code}
+                            onValueChange={code => setCode(code)}
+                            highlight={code => highlight(code, languages.js)}
+                            padding={10}
+                            style={{
+                                fontFamily: '"Fira code", "Fira Mono", monospace',
+                                fontSize: 12,
+                            }}
+                        />
+
                     </TabPanel>
                 </Box>
             </Box>
