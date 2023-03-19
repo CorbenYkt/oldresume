@@ -6,6 +6,7 @@ const navbar = () => {
             <Link to="/">Coins|Currency</Link>
             <Link to="/meteo">Meteo</Link>
             <Link to="/about">Me</Link>
+            <Link to="/about">Homeworks</Link>
         </Box >
     )
 }
