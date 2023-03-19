@@ -17,30 +17,6 @@ ind:process0 rdf:type classes:Process;
         prop:hasResource ind:googlecloud;
         prop:hasOutput ind:Text.
 
-ind:process01 prop:SubProcess ind:process0;
-		rdfs:label "C1 and Image preparing";
-        prop:hasInput ind:imagedatasets;
-        prop:hasInput ind:Image;
-        prop:hasResource ind:teammates;
-        prop:hasOutput ind:Recognition;
-        prop:hasOutput ind:Acquiremodel.
-
-ind:process02 prop:SubProcess ind:process0;
-		rdfs:label "Acquire model";
-        prop:hasInput ind:process01;
-        prop:hasResource ind:teammates;
-        prop:hasResource ind:googlecloud;
-		prop:hasKPI	ind:rulesofrecognition;
-        prop:hasKPI	ind:mlalgorith;
-        prop:hasOutput ind:Recognition.
-
-ind:process03 prop:SubProcess ind:process0;
-		rdfs:label "Recognition";
-        prop:hasInput ind:process01;
-   		prop:hasKPI	ind:process02;
-        prop:hasResource ind:teammates;
-        prop:hasResource ind:googlecloud;
-        prop:hasOutput ind:Text.
 
 
 
