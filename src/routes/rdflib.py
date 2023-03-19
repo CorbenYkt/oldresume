@@ -2,7 +2,8 @@ import rdflib
 from rdflib import *
 
 g = rdflib.Graph()
-result = g.parse("", format="text/n3")
+result = g.parse(
+    "https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/routes/IDEF0.n3", format="text/n3")
 
 qres = g.query(
     """SELECT *
