@@ -21,7 +21,7 @@ export default function About() {
             </Box>
             <div>
                 <p>Hey, it's me - Dmitrii Artemev, my wife Tanya and our son Gosha. I am from the city of
-                    Yakutsk, in my {(new Date().getFullYear() - 1985)} years old I love nature and my family.
+                    Yakutsk, in my {(new Date().getFullYear() - 1985)} years I love nature and my family.
                     We also have a West Highland White Terrier.
                     Here is his <a href="https://corbenykt.github.io/fozzy/">page</a>.
                     I also love programming, before that I worked in the field of building and construction

@@ -60,11 +60,11 @@ export default function Homeworks() {
                 <Box sx={{ width: '100%' }} style={{ textAlign: 'justify' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="IDEF0" />
                             <Tab label="SPARQL" />
+                            <Tab label="IDEF0" />
                         </Tabs>
                     </Box>
-                    <TabPanel value={value} index={0}>
+                    <TabPanel value={value} index={1}>
                         <div>
                             <h3>So, what is it IDEF0?</h3>
                             <p>It's a function modeling methodology for describing manufacturing functions, which offers a functional modeling language for the analysis, development, reengineering and integration of information systems, business processes or software engineering analysis.</p>
@@ -75,7 +75,7 @@ export default function Homeworks() {
                             <p>Yeah, mb they not so fancy ) but it's not so important at this stage i think. Btw don't judge a book by its cover))</p>
                         </div>
                     </TabPanel>
-                    <TabPanel value={value} index={1} >
+                    <TabPanel value={value} index={0} >
                         <h3>SPARQL?</h3>
                         <p>SPARQL is the standard query language and protocol for Linked Open Data and RDF databases.
                             Having been designed to query a great variety of data, it can efficiently extract information hidden in

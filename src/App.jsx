@@ -55,7 +55,7 @@ function App() {
   }
 
   React.useEffect(() => {
-    fetchСurrencies();
+    //fetchСurrencies();
     fetchCoins();
   }, []);
 
