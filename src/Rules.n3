@@ -6,30 +6,46 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 classes:Process	a owl:Class.
-classes:Interval	a owl:Class.
+
+classes:Interval a owl:Class.
+
 classes:KPI	a owl:Class.
-classes:state	a owl:Class.
+
+classes:state a owl:Class.
+
 prop:SubProcess	a owl:ObjectProperty.
+
 prop:hasInter	a owl:ObjectProperty.
+
 prop:causes	a owl:ObjectProperty;
 		a owl:AsymmetricProperty.
+
 prop:hasKPI	a owl:ObjectProperty;
 		a owl:AsymmetricProperty;
 		a owl:IrreflexiveProperty.
+
 prop:hasInter	a owl:ObjectProperty;
 		rdfs:domain classes:KPI;
-		rdfs:range classes:Interval.
+		rdfs:range classes:Interval.		
+
 prop:hasResource	a owl:ObjectProperty.
+
 prop:hasMin	a owl:DataTypeProperty.
+
 prop:hasMax	a owl:DataTypeProperty.
+
 ind:AllKPIs	a owl:Class;
 		owl:oneof ind:kpi0,ind:kpi1,ind:kpi2,ind:kpi3,ind:kpi4,ind:kpi5,ind:kpi6,ind:kpi7,ind:kpi8.
+
 classes:state owl:disjointWith classes:Process.
+
 prop:hasKPI owl:propertyDisjointWith prop:causes.
+
 ind:np1	a	owl:NegativePropertyAssertion;
 	owl:sourceIndividual ind:proc0;
 	owl:assertionProperty prop:hasKPI;
 	owl:targetIndividual ind:kpi3.
+
 ind:np2	a	owl:NegativePropertyAssertion;
 	owl:sourceIndividual ind:Interval1;
 	owl:assertionProperty prop:hasMin;
