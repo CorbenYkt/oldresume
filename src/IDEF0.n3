@@ -26,7 +26,7 @@ ind:process01 prop:SubProcess ind:process0;
 
 ind:process02 prop:SubProcess ind:process0;
     rdfs:label "Acquire model";
-    prop:hasInput ind:process01;
+    prop:hasInput ind:process02;
     prop:hasResource ind:teammates;
     prop:hasResource ind:googlecloud;
     prop:hasKPI ind:rulesofrecognition;
@@ -35,7 +35,7 @@ ind:process02 prop:SubProcess ind:process0;
 
 ind:process03 prop:SubProcess ind:process0;
     rdfs:label "Recognition";
-    prop:hasInput ind:process01;
+    prop:hasInput ind:process02;
     prop:hasKPI	ind:process02;
     prop:hasResource ind:teammates;
     prop:hasResource ind:googlecloud;
@@ -52,7 +52,7 @@ ind:process04 prop:SubProcess ind:process02;
 
 ind:process05 prop:SubProcess ind:process04;
     rdfs:label "Tuned model";
-    prop:hasInput ind:process01;
+    prop:hasInput ind:process04;
     prop:hasResource ind:teammates;
     prop:hasResource ind:googlecloud;
     prop:hasOutput ind:Text.
