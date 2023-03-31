@@ -30,8 +30,6 @@ function TabPanel(props) {
 }
 
 export default function Homeworks() {
-
-
     const [value, setValue] = React.useState(0);
     const [code, setCode] = React.useState(
         ``
