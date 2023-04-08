@@ -97,7 +97,7 @@ export default function Homeworks() {
 import rdflib
 from rdflib import *
 g = rdflib.Graph()
-result = g.parse("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/IDEF0.n3", format="text/n3")
+result = g.parse("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/Team3KB.n3", format="text/n3")
                             
 qres = g.query("""SELECT DISTINCT ?ind ?ExistingKPIs WHERE {?ind prop:hasKPI ?ExistingKPIs.}""")
 for row in qres:
