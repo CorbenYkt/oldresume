@@ -1,0 +1,73 @@
+@prefix ind:<URN:inds:>.
+@prefix prop:<URN:prop:>.
+@prefix classes:<URN:class>.
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+ind:process0 a classes:process;
+    rdfs:label "Landscape Image recognition";
+    rdf:isDefinedBy	"Team 3";
+    prop:hasKPI ind:accuracyscore;
+    prop:hasKPI	ind:mlalgorithm;
+    prop:hasInput ind:kaggledataset;
+    prop:hasInput ind:messagewithimage;
+    prop:hasResource ind:pythonlibraries;
+    prop:hasResource ind:team3;
+    prop:hasResource ind:cnnlogic;
+    prop:hasResource ind:telegram;
+    prop:hasOutput ind:text.
+
+ind:process01 prop:SubProcess ind:process0;
+    rdfs:label "Image preparation";
+    prop:hasInput ind:messagewithimage;
+    prop:hasInput ind:kaggledataset;
+    prop:hasResource ind:pythonlibraries;
+    prop:hasResource ind:telegram;
+    prop:hasOutput ind:process02.
+
+ind:process02 prop:SubProcess ind:process0;
+    rdfs:label "Model creation";
+    prop:hasInput ind:process01;
+    prop:hasResource ind:cnnlogic;
+    prop:hasKPI ind:mlalgorithm;
+    prop:hasOutput ind:process03.
+
+ind:process03 prop:SubProcess ind:process0;
+    rdfs:label "Image recognition";
+    prop:hasInput ind:process02;
+    prop:hasKPI	ind:mlalgorithm;
+	prop:hasKPI	ind:accuracyscore;
+	prop:hasResource ind:pythonlibraries;
+    prop:hasResource ind:team3;
+    prop:hasOutput ind:process04.
+
+ind:process04 prop:SubProcess ind:process0;
+    rdfs:label "Result ouput";
+    prop:hasInput ind:process03;
+    prop:hasResource ind:telegram;
+    prop:hasOutput ind:text.
+
+ind:process05 prop:SubProcess ind:process03;
+    rdfs:label "Model learning";
+    prop:hasInput ind:process02;
+    prop:hasKPI	ind:mlalgorithm;
+	prop:hasResource ind:pythonlibraries;
+    prop:hasResource ind:team3;
+    prop:hasOutput ind:process06.
+
+ind:process06 prop:SubProcess ind:process03;
+    rdfs:label "Model validation";
+    prop:hasInput ind:process05;
+    prop:hasKPI	ind:accuracyscore;
+	prop:hasResource ind:pythonlibraries;
+    prop:hasResource ind:team3;
+    prop:hasOutput ind:process05;
+	prop:hasOutput ind:process07.
+
+ind:process07 prop:SubProcess ind:process03;
+    rdfs:label "Predict result";
+    prop:hasInput ind:process06;
+    prop:hasKPI	ind:accuracyscore;
+    prop:hasResource ind:team3;
+	prop:hasOutput ind:process04.

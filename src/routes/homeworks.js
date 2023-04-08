@@ -34,7 +34,7 @@ export default function Homeworks() {
     const [code, setCode] = React.useState(
         ``
     );
-    fetch("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/IDEF0.n3")
+    fetch("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/Team3KB.n3")
         .then((response) => response.text())
         .then((html) => { setCode(html); })
         .catch((error) => { console.warn(error); });
@@ -99,7 +99,7 @@ from rdflib import *
 g = rdflib.Graph()
 result = g.parse("https://raw.githubusercontent.com/CorbenYkt/corbenykt.github.io/main/src/IDEF0.n3", format="text/n3")
                             
-qres = g.query("""SELECT ?label WHERE {?class rdfs:label ?label.}""")
+qres = g.query("""SELECT DISTINCT ?ind ?ExistingKPIs WHERE {?ind prop:hasKPI ?ExistingKPIs.}""")
 for row in qres:
     print(row)
 `}
