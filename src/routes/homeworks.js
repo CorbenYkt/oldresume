@@ -67,9 +67,9 @@ export default function Homeworks() {
                             <h3>So, what is it IDEF0?</h3>
                             <p>It's a function modeling methodology for describing manufacturing functions, which offers a functional modeling language for the analysis, development, reengineering and integration of information systems, business processes or software engineering analysis.</p>
                             <p>Since I am currently studying the topic of Machine Learning, let's try to draw up an IDEF0 diagram for an example project on recognizing an image. Suppose that we get two levels of decomposition, and then we get a very small scheme.</p>
-                            <img src={process.env.PUBLIC_URL + '/img/A0.png'} width='90%' /><hr></hr>
-                            <img src={process.env.PUBLIC_URL + '/img/Decompose A0.png'} width='90%' /><hr></hr>
-                            <img src={process.env.PUBLIC_URL + '/img/Decompose A2.png'} width='90%' /><hr></hr>
+                            <img src={process.env.PUBLIC_URL + '/img/idef0-1.jpg'} width='90%' /><hr></hr>
+                            <img src={process.env.PUBLIC_URL + '/img/idef0-2.jpg'} width='90%' /><hr></hr>
+                            <img src={process.env.PUBLIC_URL + '/img/idef0-3.jpg'} width='90%' /><hr></hr>
                             <p>Yeah, mb they not so fancy ) but it's not so important at this stage i think. Btw don't judge a book by its cover))</p>
                         </div>
                     </TabPanel>
