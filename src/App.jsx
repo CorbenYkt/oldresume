@@ -60,11 +60,11 @@ function App() {
   }, []);
 
   if (loading) {
-    return <h3>Идет загрузка...</h3>
+    return <h3>Loading...</h3>
   }
 
   if (error) {
-    return <h3>Ошибка при получении данных</h3>
+    return <h3>Error fetching data...</h3>
   }
 
   return (
