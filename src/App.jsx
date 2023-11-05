@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Coins from "./routes/coins";
 import Meteo from "./routes/meteo";
 import Home from "./routes/home";
-import Homeworks from "./routes/homeworks";
-import ChatPage from "./routes/chatgpt";
+// import Homeworks from "./routes/homeworks";
+// import ChatPage from "./routes/chatgpt";
 import Navbar from './navbar';
 import { Link } from "react-router-dom"
 import { Container, Grid } from '@mui/material';
@@ -81,8 +81,8 @@ function App() {
                 <Route index path="/" element={<Home />} />
                 <Route exact path="/meteo" element={<Meteo />} />
                 <Route exact path="/coins" element={<Coins coins={coins} currencies={currencies} />} />
-                <Route exact path="/homeworks" element={<Homeworks />} />
-                <Route exact path="/chatpage" element={<ChatPage />} />
+                {/* <Route exact path="/homeworks" element={<Homeworks />} /> */}
+                {/* <Route exact path="/chatpage" element={<ChatPage />} /> */}
               </Routes>
               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                 py={'0rem'}><br></br>
