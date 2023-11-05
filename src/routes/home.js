@@ -27,7 +27,7 @@ export default function About() {
                     I also love programming, before that I worked in the field of building and construction
                     design for a long time. Currently, I entered St. Petersburg Polytechnic University for a
                     joint postgraduate program "Intelligent Systems" with the University of Wellington...
-                    So, as i'm trying to learn ReactJS let me upload nost interesting homeworks here...</p>
+                    I'm currently passionate about learning ReactJS</p>
             </div>
 
         </div>

@@ -57,16 +57,16 @@ function App() {
 
   React.useEffect(() => {
     //fetchСurrencies();
-    fetchCoins();
+    //fetchCoins();
   }, []);
 
-  if (loading) {
-    return <h3>Loading...</h3>
-  }
+  // if (loading) {
+  //   return <h3>Loading...</h3>
+  // }
 
-  if (error) {
-    return <h3>Error fetching data...</h3>
-  }
+  // if (error) {
+  //   return <h3>Error fetching data...</h3>
+  // }
 
   return (
     <>
