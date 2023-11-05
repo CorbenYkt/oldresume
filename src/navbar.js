@@ -6,8 +6,8 @@ const navbar = () => {
             <Link to="/">Me</Link>
             {/* <Link to="/meteo">Meteo</Link> */}
             <Link to="/coins">Coins</Link>
-            <Link to="/homeworks">Homeworks</Link>
-            <Link to="/ChatPage">ChatGPT</Link>
+            {/* <Link to="/homeworks">Homeworks</Link>
+            <Link to="/ChatPage">ChatGPT</Link> */}
         </Box >
     )
 }
