@@ -80,7 +80,7 @@ function App() {
               <Routes>
                 <Route index path="/" element={<Home />} />
                 <Route exact path="/meteo" element={<Meteo />} />
-                <Route exact path="/coins" element={<Coins coins={coins} currencies={currencies} />} />
+                {/* <Route exact path="/coins" element={<Coins coins={coins} currencies={currencies} />} /> */}
                 {/* <Route exact path="/homeworks" element={<Homeworks />} /> */}
                 {/* <Route exact path="/chatpage" element={<ChatPage />} /> */}
               </Routes>
