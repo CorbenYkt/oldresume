@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home";
+import Gallery from "./routes/gallery";
+import Currency from "./routes/currency";
 import Navbar from './navbar';
 import { Container, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -22,9 +24,8 @@ function App() {
             <Container>
               <Routes>
                 <Route index path="/" element={<Home />} />
-                
-                {/* <Route exact path="/homeworks" element={<Homeworks />} /> */}
-                {/* <Route exact path="/chatpage" element={<ChatPage />} /> */}
+                <Route exact path="/gallery" element={<Gallery />} />
+                <Route exact path="/currency" element={<Currency />} />
               </Routes>
               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                 py={'0rem'}><br></br>
