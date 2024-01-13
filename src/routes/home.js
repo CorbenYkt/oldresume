@@ -25,9 +25,9 @@ export default function About() {
                     We also have a West Highland White Terrier.
                     Here is his <a href="https://corbenykt.github.io/fozzy/">page</a>.
                     I also love programming, before that I worked in the field of building and construction
-                    design for a long time. Currently, I entered St. Petersburg Polytechnic University for a
-                    joint postgraduate program "Intelligent Systems" with the University of Wellington...
-                    I'm currently passionate about learning ReactJS</p>
+                    design for a long time. Currently, I Enrolled in Master of Information Technology, Whitireia and WelTec,
+                    postgraduate program "Intelligent Systems" in Wellington, New Zealand...
+                </p>
             </div>
 
         </div>
