@@ -13,13 +13,12 @@ export const CurrencyBlock = ({ value, currency, onChangeValue, onChangeCurrency
                     {cur}
                 </li>
             ))}
-
         </ul>
         <input
             onChange={(e) => onChangeValue(e.target.value)}
             value={value}
             type="number"
-            placeholder={0}
-        />
+            placeholder={0} />
+        <br></br><br></br>
     </div>
 );

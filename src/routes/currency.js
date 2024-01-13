@@ -45,11 +45,12 @@ export default function Currency() {
 
 
     return (
-        <div className="App">
+        <div>
             <CurrencyBlock value={fromPrice}
                 currency={fromCurrency}
                 onChangeCurrency={setfromCurrency}
                 onChangeValue={onChangeFromPrice} />
+                
             <CurrencyBlock value={toPrice}
                 currency={toCurrency}
                 onChangeCurrency={settoCurrency}
