@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import { Routes, Route } from "react-router-dom";
 import Coins from "./routes/coins";
@@ -9,14 +10,23 @@ import Navbar from './navbar';
 import { Link } from "react-router-dom"
 import { Container, Grid } from '@mui/material';
 import axios from 'axios';
-import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
+import { GoogleLogin } from '@react-oauth/google';
+import { useGoogleOneTapLogin } from '@react-oauth/google';
+import { googleLogout } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
+import Button from '@mui/material/Button';
+import LogoutIcon from '@mui/icons-material/Logout';
+import LoginIcon from '@mui/icons-material/Login';
 
 function App() {
   const [currencies, setСurrencies] = React.useState();
   const [coins, setCoins] = React.useState();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
+  const [user, setUser] = React.useState([]);
+  const [profile, setProfile] = React.useState([]);
+  const [isLoggedIn, setisLoggedIn] = React.useState(false);
 
   async function fetchСurrencies() {
     const encodedParams = new URLSearchParams();
@@ -68,6 +78,35 @@ function App() {
   //   return <h3>Error fetching data...</h3>
   // }
 
+  // useGoogleOneTapLogin({
+  //   onSuccess: credentialResponse => {
+  //     console.log(credentialResponse);
+  //   },
+  //   onError: () => {
+  //     console.log('Login Failed');
+  //   },
+  // });
+
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => {
+      console.log('Login Accepted:', codeResponse);
+      loginWithGoogle(codeResponse.access_token).then((res) => {
+        const temp = {
+          ...res.data.data,
+          ...res.data.user_info,
+        };
+        console.log(temp);
+      });
+    },
+    onError: (error) => console.log('Login Failed:', error)
+  });
+
+  const logOut = () => {
+    console.log(profile);
+    googleLogout();
+    setProfile(null);
+  };
+
   return (
     <>
       <div>
@@ -75,11 +114,25 @@ function App() {
           <Grid item xs={1}>
           </Grid>
           <Grid item xs={10}>
-            <Navbar></Navbar>
+            <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
+              py={'0rem'}>
+              <Navbar>
+              </Navbar>
+              <Button onClick={() => login()} variant="contained" startIcon={<LoginIcon />}>Log in with Google</Button>
+              {profile ? (
+                <div style={{ display: 'inline-flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <Link href="/profile"></Link>
+                  <Button onClick={logOut} variant="outlined" startIcon={<LogoutIcon />}>Log out</Button>
+                </div>
+              ) : (
+                <Button onClick={() => login()} variant="contained" startIcon={<LoginIcon />}>Log in with Google</Button>
+              )}
+
+            </Box>
             <Container>
               <Routes>
-                <Route index path="/" element={<Home />} />
-                <Route exact path="/meteo" element={<Meteo />} />
+                <Route index path="/" element={<Home />} user={setUser} profile={setProfile} />
+                <Route exact path="/meteo" element={<Meteo user={setUser} profile={setProfile} />} />
                 {/* <Route exact path="/coins" element={<Coins coins={coins} currencies={currencies} />} /> */}
                 {/* <Route exact path="/homeworks" element={<Homeworks />} /> */}
                 {/* <Route exact path="/chatpage" element={<ChatPage />} /> */}
