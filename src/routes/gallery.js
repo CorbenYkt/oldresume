@@ -37,9 +37,13 @@ export default function Gallery() {
             <Box component={'main'} display={'flex'} flexDirection={{ xs: 'column', md: 'row' }} alignItems={'center'}
                 justifyContent={'center'} minHeight={'calc(100vh - 175px)'}>
                 <Grid container justifyContent="center">
-                    <Grid item xs={8}>
+                    <Grid item xs={6}>
                         {IsLoading ?
-                            (<p>Loading photos taken from my shared Google album...</p>)
+                            (
+                                <Box display={'flex'} flexDirection={'column'} alignItems={'center'} py={'0rem'}><br></br>
+                                    ...Loading photos from my shared Google album...
+                                </Box>
+                            )
                             :
                             (<ImageGallery items={images}></ImageGallery>)
                         }
