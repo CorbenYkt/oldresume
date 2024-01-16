@@ -1,7 +1,5 @@
 import React from "react";
 import { CurrencyBlock } from './currencyBlock';
-import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
-import { ConstructionOutlined, RateReview } from "@mui/icons-material";
 
 export default function Currency() {
     const [fromCurrency, setfromCurrency] = React.useState('NZD');

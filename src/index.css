@@ -9,19 +9,16 @@ body,
 a:link {
   text-decoration: none;
   color: #54627B;
-  font-weight: bold;
 }
 
 a:visited {
   text-decoration: none;
   color: #54627B;
-  font-weight: bold;
 }
 
 a:hover {
   text-decoration: none;
   color: #54627B;
-  font-weight: bold;
 }
 
 a:active {
@@ -45,6 +42,14 @@ body {
 h3 {
   color: #54627B;
 
+}
+
+.navLink {
+  font-weight: bold;
+}
+
+.simpleLink {
+  font-weight: normal;
 }
 
 .App {
