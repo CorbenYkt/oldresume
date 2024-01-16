@@ -5,41 +5,44 @@ import { Box, Grid } from "@mui/material";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-const ImagesGallery = () => {
+export default function Gallery() {
+    const [IsLoading, setIsLoading] = React.useState(true);
     const [images, setImages] = React.useState(null);
 
-    React.useEffect(() => {
-        let shouldCancel = false;
-
-        const call = async () => {
-            const response = await axios.get(
-                "https://google-photos-album-demo2.glitch.me/TL8QPHvenpGpf6BC7"
+    async function fetchPhotos() {
+        setIsLoading(true);
+        try {
+            const { data } = await axios.get('https://google-photos-album-demo2.glitch.me/TL8QPHvenpGpf6BC7');
+            console.log(data);
+            setImages(
+                data.map(url => ({
+                    original: `${url}=w800`,
+                    thumbnail: `${url}=w100`
+                }))
             );
-            if (!shouldCancel && response.data && response.data.length > 0) {
-                setImages(
-                    response.data.map(url => ({
-                        original: `${url}=w640`,
-                        thumbnail: `${url}=w100`
-                    }))
-                );
-            }
-        };
-        call();
-        return () => (shouldCancel = true);
+
+        } catch {
+            //setError(true);
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
+    React.useEffect(() => {
+        fetchPhotos();
     }, []);
 
-    return images ? <ImageGallery items={images} /> : null;
-};
-
-export default function Gallery() {
     return (
         <>
-            <p>This photos taken from my shared Google album</p>
             <Box component={'main'} display={'flex'} flexDirection={{ xs: 'column', md: 'row' }} alignItems={'center'}
                 justifyContent={'center'} minHeight={'calc(100vh - 175px)'}>
                 <Grid container justifyContent="center">
                     <Grid item xs={8}>
-                        <ImagesGallery></ImagesGallery>
+                        {IsLoading ?
+                            (<p>Loading photos taken from my shared Google album...</p>)
+                            :
+                            (<ImageGallery items={images}></ImageGallery>)
+                        }
                     </Grid>
                 </Grid>
             </Box>
