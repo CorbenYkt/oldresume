@@ -6,7 +6,7 @@ const navbar = () => {
         <Box display={'flex'} justifyContent={'center'} columnGap={'1em'} fontSize={'1rem'} paddingTop={2} paddingBottom={2} >
             <Link to="/" className="navLink">Me</Link>
             <Link to='/gallery' className="navLink">Gallery</Link>
-            <Link to='/currency' className="navLink">Currency</Link>
+            {/* <Link to='/currency' className="navLink">Currency</Link> */}
             <Link to='/contacts' className="navLink">Contacts</Link>
             {/* <Link to="/meteo">Meteo</Link> */}
             {/* <Link to="/coins">Coins</Link> */}

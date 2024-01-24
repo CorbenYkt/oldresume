@@ -26,7 +26,7 @@ function App() {
               <Routes>
                 <Route index path="/" element={<Home />} />
                 <Route exact path="/gallery" element={<Gallery />} />
-                <Route exact path="/currency" element={<Currency />} />
+                {/* <Route exact path="/currency" element={<Currency />} /> */}
                 <Route exact path="/contacts" element={<Contacts />} />
               </Routes>
               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
