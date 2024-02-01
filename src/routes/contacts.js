@@ -24,7 +24,7 @@ export default function Contacts() {
                 </div>
                 <div>GIT: <a href='https://github.com/corbenykt'>https://github.com/corbenykt</a></div>
                 <div>phone: +64 22 594 6268</div>
-                <div>whatsapp: +7 9644197913</div>
+                <div>whatsapp: +7 964 419 7913</div>
                 <div>
                     e-mail: vool34@gmail.com
                 </div>
